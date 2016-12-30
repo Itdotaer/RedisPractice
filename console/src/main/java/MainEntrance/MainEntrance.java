@@ -53,5 +53,7 @@ class MainEntrance{
         //DeleteUser
         userAccess.deleteUserById(4);
         userAccess.deleteUserByUserName("harry");
+
+        userAccess.close();
     }
 }
