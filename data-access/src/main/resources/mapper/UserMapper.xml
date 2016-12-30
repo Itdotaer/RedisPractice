@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ctrip.mapper.UserMapper">
+    <select id="getUserById" parameterType="int" resultType="User">
+        select * from user where id = #{id}
+    </select>
+    <resultMap id="resultListUser" type="User">
+        <id column="id" property="id" />
+        <result column="userName" property="userName" />
+        <result column="userAge" property="userAge" />
+        <result column="userAddress" property="userAddress" />
+    </resultMap>
+    <select id="getUsers" parameterType="String" resultMap="resultListUser">
+        select * from user where userName like #{userName}
+    </select>
+    <insert id="addUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+        insert into user(userName, userAge, userAddress) values(#{userName}, #{userAge}, #{userAddress})
+    </insert>
+    <update id="updateUser" parameterType="User">
+        update user set userName = #{userName}, userAge = #{userAge}, userAddress = #{userAddress}
+        where id = #{id}
+    </update>
+    <delete id="deleteUserById" parameterType="int">
+        delete from user where id = #{id}
+    </delete>
+    <delete id="deleteUserByUserName" parameterType="String">
+        delete from user where userName = #{userName}
+    </delete>
+</mapper>

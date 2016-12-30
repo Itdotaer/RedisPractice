@@ -12,7 +12,8 @@
         <setting name="defaultExecutorType" value="REUSE" />
     </settings>
     <typeAliases>
-        <typeAlias alias="SystConfig" type="com.ctrip.pojo.SysConfig"/>
+        <typeAlias alias="SysConfig" type="com.ctrip.pojo.SysConfig"/>
+        <typeAlias alias="User" type="com.ctrip.pojo.User"/>
     </typeAliases>
     <environments default="development">
         <environment id="development">
@@ -26,6 +27,7 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="SysConfigMapper.xml" />
+        <mapper resource="mapper/SysConfigMapper.xml" />
+        <mapper resource="mapper/UserMapper.xml" />
     </mappers>
 </configuration>

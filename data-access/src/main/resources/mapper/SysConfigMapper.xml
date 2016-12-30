@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ctrip.mapper.SysConfigMapper">
-  <resultMap id="BaseResultMap" type="com.ctrip.pojo.SysConfig">
+  <resultMap id="sysConfigList" type="SysConfig">
     <id column="variable" jdbcType="VARCHAR" property="variable" />
     <result column="value" jdbcType="VARCHAR" property="value" />
     <result column="set_time" jdbcType="TIMESTAMP" property="setTime" />
     <result column="set_by" jdbcType="VARCHAR" property="setBy" />
   </resultMap>
-  <select id="select" parameterType="String" resultMap="BaseResultMap">
+  <select id="select" parameterType="String" resultMap="sysConfigList">
     select * from sys_config
     <if test='_parameter!=""'>
       where variable = #{_parameter}
     </if>
-  </select></mapper>
+  </select>
+</mapper>

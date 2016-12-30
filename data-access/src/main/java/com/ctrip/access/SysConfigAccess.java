@@ -1,28 +1,43 @@
 package com.ctrip.access;
 
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import com.ctrip.mapper.SysConfigMapper;
+import com.ctrip.pojo.SysConfig;
+import org.apache.ibatis.session.SqlSession;
 
-import java.io.Reader;
+import java.util.List;
 
 /**
  * Created by jt_hu on 2016/12/29.
  */
-public class SysConfigAccess {
-    private static SqlSessionFactory sqlSessionFactory;
-    private static Reader reader;
+public class SysConfigAccess implements SysConfigMapper {
+    private SqlSession session;
+    private SysConfigMapper mapper;
 
-    static{
-        try{
-            reader    = Resources.getResourceAsReader("mybatisConfig.xml");
-            sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
-        }catch(Exception e){
+    public SysConfigAccess(){
+        session = AccessFactory.getSession();
+        try {
+            mapper =  session.getMapper(SysConfigMapper.class);
+        } catch (Exception e){
             e.printStackTrace();
+            throw e;
         }
     }
 
-    public static SqlSessionFactory getSession(){
-        return sqlSessionFactory;
+    /**
+     * 根据variable获取SysConfig
+     *
+     * @param variable
+     * @return
+     */
+    @Override
+    public List<SysConfig> select(String variable) {
+        return mapper.select(variable);
+    }
+
+    /**
+     * 关闭
+     */
+    public void close(){
+        session.close();
     }
 }
