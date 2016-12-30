@@ -26,4 +26,26 @@
     <delete id="deleteUserByUserName" parameterType="String">
         delete from user where userName = #{userName}
     </delete>
+    <!--<resultMap id="resultUserArticle" type="Article">-->
+        <!--<id property="id" column="aid" />-->
+        <!--<result property="title" column="title" />-->
+        <!--<result property="content" column="content" />-->
+
+        <!--<association property="user" javaType="User">-->
+            <!--<id property="id" column="id" />-->
+            <!--<result property="userName" column="userName" />-->
+            <!--<result property="userAddress" column="userAddress" />-->
+        <!--</association>-->
+    <!--</resultMap>-->
+    <resultMap id="resultUserArticle" type="Article">
+        <id property="id" column="aid" />
+        <result property="title" column="title" />
+        <result property="content" column="content" />
+        <association property="user" javaType="User" resultMap="resultListUser" />
+    </resultMap>
+    <select id="getUserArtices" parameterType="int" resultMap="resultUserArticle">
+        select user.id, user.userName, user.userAddress, article.id aid, article.title,
+        article.content from user, article
+        where user.id = article.userid and user.id = #{id}
+    </select>
 </mapper>

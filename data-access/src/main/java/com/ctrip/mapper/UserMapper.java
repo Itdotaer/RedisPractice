@@ -1,5 +1,6 @@
 package com.ctrip.mapper;
 
+import com.ctrip.pojo.Article;
 import com.ctrip.pojo.User;
 
 import java.util.List;
@@ -45,4 +46,11 @@ public interface UserMapper {
      * @param userName
      */
     void deleteUserByUserName(String userName);
+
+    /**
+     * 关联查询
+     * @param id
+     * @return
+     */
+    List<Article> getUserArtices(int id);
 }

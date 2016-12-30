@@ -1,6 +1,7 @@
 package com.ctrip.access;
 
 import com.ctrip.mapper.UserMapper;
+import com.ctrip.pojo.Article;
 import com.ctrip.pojo.User;
 import org.apache.ibatis.session.SqlSession;
 
@@ -87,6 +88,17 @@ public class UserAccess implements UserMapper {
     public void deleteUserByUserName(String userName) {
         mapper.deleteUserByUserName(userName);
         session.commit();
+    }
+
+    /**
+     * 关联查询
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public List<Article> getUserArtices(int id) {
+        return mapper.getUserArtices(id);
     }
 
     /**

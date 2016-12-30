@@ -2,6 +2,7 @@ package MainEntrance;
 
 import com.ctrip.access.SysConfigAccess;
 import com.ctrip.access.UserAccess;
+import com.ctrip.pojo.Article;
 import com.ctrip.pojo.SysConfig;
 import com.ctrip.pojo.User;
 
@@ -53,6 +54,13 @@ class MainEntrance{
         //DeleteUser
         userAccess.deleteUserById(4);
         userAccess.deleteUserByUserName("harry");
+
+        List<Article> articles = userAccess.getUserArtices(1);
+        for(Article article:articles){
+            System.out.println(article.getTitle()+":"+article.getContent()+
+                    ":作者是:"+article.getUser().getUserName()+":地址:"+
+                    article.getUser().getUserAddress());
+        }
 
         userAccess.close();
     }
