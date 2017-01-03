@@ -9,6 +9,7 @@ public class User {
     private String userName;
     private String userAge;
     private String userAddress;
+    private PhoneNumber phoneNumber;
 
     public int getId() {
         return id;
@@ -34,5 +35,10 @@ public class User {
     public void setUserAddress(String userAddress) {
         this.userAddress = userAddress;
     }
-
+    public PhoneNumber getPhoneNumber() {
+        return phoneNumber;
+    }
+    public void setPhoneNumber(PhoneNumber phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 }

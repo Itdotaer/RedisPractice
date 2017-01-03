@@ -5,6 +5,8 @@ import com.ctrip.access.UserAccess;
 import com.ctrip.pojo.Article;
 import com.ctrip.pojo.SysConfig;
 import com.ctrip.pojo.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -37,14 +39,14 @@ class MainEntrance{
 
         User user = userAccess.getUserById(1);
 
-        System.out.println(String.format("%s\t$%s\t%s\t%s", user.getId(), user.getUserName(),
-                user.getUserAge(), user.getUserAddress()));
+        System.out.println(String.format("%s\t$%s\t%s\t%s\t$s", user.getId(), user.getUserName(),
+                user.getUserAge(), user.getUserAddress(), user.getPhoneNumber().toString()));
 
         List<User> users = userAccess.getUsers("%");
 
         for(User user1 : users){
-            System.out.println(String.format("%s\t$%s\t%s\t%s", user1.getId(), user1.getUserName(),
-                    user1.getUserAge(), user1.getUserAddress()));
+            System.out.println(String.format("%s\t$%s\t%s\t%s\t%s", user1.getId(), user1.getUserName(),
+                    user1.getUserAge(), user1.getUserAddress(), user1.getPhoneNumber().toString()));
         }
 
         //UpdateUser
@@ -59,9 +61,12 @@ class MainEntrance{
         for(Article article:articles){
             System.out.println(article.getTitle()+":"+article.getContent()+
                     ":作者是:"+article.getUser().getUserName()+":地址:"+
-                    article.getUser().getUserAddress());
+                    article.getUser().getUserAddress()+":电话:"+article.getUser().getPhoneNumber().toString());
         }
 
         userAccess.close();
+
+        Logger logger = LoggerFactory.getLogger(MainEntrance.class);
+        logger.info("slf4j: Hello World");
     }
 }

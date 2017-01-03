@@ -9,6 +9,7 @@
         <result column="userName" property="userName" />
         <result column="userAge" property="userAge" />
         <result column="userAddress" property="userAddress" />
+        <result column="phoneNumber" property="phoneNumber" />
     </resultMap>
     <select id="getUsers" parameterType="String" resultMap="resultListUser">
         select * from user where userName like #{userName}
@@ -44,7 +45,7 @@
         <association property="user" javaType="User" resultMap="resultListUser" />
     </resultMap>
     <select id="getUserArtices" parameterType="int" resultMap="resultUserArticle">
-        select user.id, user.userName, user.userAddress, article.id aid, article.title,
+        select user.id, user.userName, user.userAddress, user.phoneNumber, article.id aid, article.title,
         article.content from user, article
         where user.id = article.userid and user.id = #{id}
     </select>

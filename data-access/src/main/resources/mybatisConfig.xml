@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-    <properties resource="mybatis.properties"></properties>
+    <properties resource="application.properties"></properties>
     <settings>
         <!-- changes from the defaults for testing -->
         <setting name="cacheEnabled" value="true" />
@@ -16,6 +16,9 @@
         <typeAlias alias="User" type="com.ctrip.pojo.User"/>
         <typeAlias alias="Article" type="com.ctrip.pojo.Article" />
     </typeAliases>
+    <typeHandlers>
+        <typeHandler handler="com.ctrip.handler.PhoneTypeHanlder" />
+    </typeHandlers>
     <environments default="development">
         <environment id="development">
             <transactionManager type="jdbc"/>
