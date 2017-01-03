@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="OUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- project level -->
+    <logger name="com.ctrip.higher-practice" level="INFO" />
+
+    <!--log4jdbc -->
+    <logger name="java.sql" level="INFO"></logger>
+    <logger name="java.sql" additivity="false"/>
+
+    <root level="DEBUG">
+        <appender-ref ref="OUT" />
+    </root>
+</configuration>
