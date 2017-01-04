@@ -1,7 +1,7 @@
-package com.ctrip.businessoperation.dal;
+package com.itdoater.businessoperation.dal;
 
 
-import com.ctrip.access.dataaccess.UserAccess;
+import com.itdoater.access.dataaccess.UserAccess;
 
 /**
  * Created by jt_hu on 2017/1/4.

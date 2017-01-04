@@ -1,4 +1,4 @@
-package com.ctrip.presentation.hello;
+package com.itdoater.presentation.hello;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

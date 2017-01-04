@@ -1,6 +1,6 @@
-package com.ctrip.businessoperation.User;
+package com.itdoater.businessoperation.User;
 
-import com.ctrip.access.pojo.User;
+import com.itdoater.access.pojo.User;
 import java.util.List;
 
 /**

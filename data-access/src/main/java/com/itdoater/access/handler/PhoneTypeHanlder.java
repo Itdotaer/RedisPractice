@@ -1,6 +1,6 @@
-package com.ctrip.access.handler;
+package com.itdoater.access.handler;
 
-import com.ctrip.access.pojo.PhoneNumber;
+import com.itdoater.access.pojo.PhoneNumber;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 

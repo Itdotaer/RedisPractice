@@ -1,6 +1,6 @@
-package com.ctrip.access.mapper;
+package com.itdoater.access.mapper;
 
-import com.ctrip.access.pojo.SysConfig;
+import com.itdoater.access.pojo.SysConfig;
 import java.util.List;
 
 public interface SysConfigMapper {

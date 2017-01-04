@@ -7,7 +7,7 @@
     </appender>
 
     <!-- project level -->
-    <logger name="com.ctrip.higher-practice" level="INFO" />
+    <logger name="com.itdoater.higher-practice" level="INFO" />
 
     <!--log4jdbc -->
     <logger name="java.sql" level="INFO"></logger>

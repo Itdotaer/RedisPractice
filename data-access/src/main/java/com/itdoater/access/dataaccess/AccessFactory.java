@@ -1,4 +1,4 @@
-package com.ctrip.access.dataaccess;
+package com.itdoater.access.dataaccess;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;

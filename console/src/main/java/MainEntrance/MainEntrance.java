@@ -1,10 +1,10 @@
 package MainEntrance;
 
-import com.ctrip.access.dataaccess.SysConfigAccess;
-import com.ctrip.access.dataaccess.UserAccess;
-import com.ctrip.access.pojo.Article;
-import com.ctrip.access.pojo.SysConfig;
-import com.ctrip.access.pojo.User;
+import com.itdoater.access.dataaccess.SysConfigAccess;
+import com.itdoater.access.dataaccess.UserAccess;
+import com.itdoater.access.pojo.Article;
+import com.itdoater.access.pojo.SysConfig;
+import com.itdoater.access.pojo.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

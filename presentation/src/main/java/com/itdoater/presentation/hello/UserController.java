@@ -1,8 +1,8 @@
-package com.ctrip.presentation.hello;
+package com.itdoater.presentation.hello;
 
-import com.ctrip.businessoperation.User.UserOper;
-import com.ctrip.businessoperation.User.UserOperImpl;
-import com.ctrip.access.pojo.User;
+import com.itdoater.businessoperation.User.UserOper;
+import com.itdoater.businessoperation.User.UserOperImpl;
+import com.itdoater.access.pojo.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

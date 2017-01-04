@@ -4,7 +4,7 @@
 
     <parent>
         <artifactId>higher-practice</artifactId>
-        <groupId>com.ctrip.higher-practice</groupId>
+        <groupId>com.itdoater.higher-practice</groupId>
         <version>1.0</version>
     </parent>
 
@@ -22,7 +22,7 @@
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.ctrip.higher-practice</groupId>
+            <groupId>com.itdoater.higher-practice</groupId>
             <artifactId>business-operation</artifactId>
             <version>${project.parent.version}</version>
         </dependency>

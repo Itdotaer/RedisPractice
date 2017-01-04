@@ -1,7 +1,7 @@
-package com.ctrip.access.dataaccess;
+package com.itdoater.access.dataaccess;
 
-import com.ctrip.access.mapper.SysConfigMapper;
-import com.ctrip.access.pojo.SysConfig;
+import com.itdoater.access.mapper.SysConfigMapper;
+import com.itdoater.access.pojo.SysConfig;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;

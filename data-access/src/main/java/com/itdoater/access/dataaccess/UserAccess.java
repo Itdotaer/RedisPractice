@@ -1,8 +1,8 @@
-package com.ctrip.access.dataaccess;
+package com.itdoater.access.dataaccess;
 
-import com.ctrip.access.mapper.UserMapper;
-import com.ctrip.access.pojo.Article;
-import com.ctrip.access.pojo.User;
+import com.itdoater.access.mapper.UserMapper;
+import com.itdoater.access.pojo.Article;
+import com.itdoater.access.pojo.User;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
