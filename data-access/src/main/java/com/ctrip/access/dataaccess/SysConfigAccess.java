@@ -1,7 +1,7 @@
-package com.ctrip.access;
+package com.ctrip.access.dataaccess;
 
-import com.ctrip.mapper.SysConfigMapper;
-import com.ctrip.pojo.SysConfig;
+import com.ctrip.access.mapper.SysConfigMapper;
+import com.ctrip.access.pojo.SysConfig;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;

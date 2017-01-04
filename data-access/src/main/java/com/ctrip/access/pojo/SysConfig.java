@@ -1,4 +1,4 @@
-package com.ctrip.pojo;
+package com.ctrip.access.pojo;
 
 import java.util.Date;
 

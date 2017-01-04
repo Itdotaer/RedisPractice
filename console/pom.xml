@@ -13,22 +13,12 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.ctrip.higher-practice</groupId>
-            <artifactId>data-access</artifactId>
-            <version>${parent.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -41,6 +31,11 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ctrip.higher-practice</groupId>
+            <artifactId>data-access</artifactId>
+            <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
 </project>

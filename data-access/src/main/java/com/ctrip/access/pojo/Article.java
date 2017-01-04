@@ -1,4 +1,4 @@
-package com.ctrip.pojo;
+package com.ctrip.access.pojo;
 
 /**
  * Created by jt_hu on 2016/12/30.

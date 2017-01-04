@@ -12,12 +12,12 @@
         <setting name="defaultExecutorType" value="REUSE" />
     </settings>
     <typeAliases>
-        <typeAlias alias="SysConfig" type="com.ctrip.pojo.SysConfig"/>
-        <typeAlias alias="User" type="com.ctrip.pojo.User"/>
-        <typeAlias alias="Article" type="com.ctrip.pojo.Article" />
+        <typeAlias alias="SysConfig" type="com.ctrip.access.pojo.SysConfig"/>
+        <typeAlias alias="User" type="com.ctrip.access.pojo.User"/>
+        <typeAlias alias="Article" type="com.ctrip.access.pojo.Article" />
     </typeAliases>
     <typeHandlers>
-        <typeHandler handler="com.ctrip.handler.PhoneTypeHanlder" />
+        <typeHandler handler="com.ctrip.access.handler.PhoneTypeHanlder" />
     </typeHandlers>
     <environments default="development">
         <environment id="development">

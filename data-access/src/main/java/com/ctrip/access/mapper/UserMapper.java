@@ -1,8 +1,7 @@
-package com.ctrip.mapper;
+package com.ctrip.access.mapper;
 
-import com.ctrip.pojo.Article;
-import com.ctrip.pojo.User;
-
+import com.ctrip.access.pojo.Article;
+import com.ctrip.access.pojo.User;
 import java.util.List;
 
 /**
