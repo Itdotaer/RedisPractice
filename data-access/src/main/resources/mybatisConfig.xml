@@ -13,7 +13,7 @@
     </settings>
     <typeAliases>
         <typeAlias alias="SysConfig" type="com.itdoater.access.pojo.SysConfig"/>
-        <typeAlias alias="User" type="com.itdoater.access.pojo.User"/>
+        <typeAlias alias="_User" type="com.itdoater.access.pojo._User"/>
         <typeAlias alias="Article" type="com.itdoater.access.pojo.Article" />
     </typeAliases>
     <typeHandlers>
@@ -41,6 +41,6 @@
     </environments>
     <mappers>
         <mapper resource="mapper/SysConfigMapper.xml" />
-        <mapper resource="mapper/UserMapper.xml" />
+        <mapper resource="mapper/_UserMapper.xml" />
     </mappers>
 </configuration>

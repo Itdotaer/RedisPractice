@@ -6,7 +6,7 @@ package com.itdoater.access.pojo;
 public class Article {
 
     private int id;
-    private User user;
+    private _User user;
     private String title;
     private String content;
 
@@ -17,10 +17,10 @@ public class Article {
         this.id = id;
     }
 
-    public User getUser() {
+    public _User getUser() {
         return user;
     }
-    public void setUser(User user) {
+    public void setUser(_User user) {
         this.user = user;
     }
     public String getTitle() {

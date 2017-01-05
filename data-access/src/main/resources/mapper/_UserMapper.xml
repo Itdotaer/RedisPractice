@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itdoater.access.mapper._UserMapper">
+    <select id="getUserById" parameterType="int" resultType="_User">
+        select * from _user where id = #{id}
+    </select>
+    <resultMap id="resultListUser" type="_User">
+        <id column="id" property="id" />
+        <result column="userName" property="userName" />
+        <result column="userAge" property="userAge" />
+        <result column="userAddress" property="userAddress" />
+        <result column="phoneNumber" property="phoneNumber" />
+    </resultMap>
+    <select id="getUsers" parameterType="String" resultMap="resultListUser">
+        select * from _user where userName like #{userName}
+    </select>
+    <insert id="addUser" parameterType="_User" useGeneratedKeys="true" keyProperty="id">
+        insert into _user(userName, userAge, userAddress) values(#{userName}, #{userAge}, #{userAddress})
+    </insert>
+    <update id="updateUser" parameterType="_User">
+        update _user set userName = #{userName}, userAge = #{userAge}, userAddress = #{userAddress}
+        where id = #{id}
+    </update>
+    <delete id="deleteUserById" parameterType="int">
+        delete from _user where id = #{id}
+    </delete>
+    <delete id="deleteUserByUserName" parameterType="String">
+        delete from _user where userName = #{userName}
+    </delete>
+    <!--<resultMap id="resultUserArticle" type="Article">-->
+        <!--<id property="id" column="aid" />-->
+        <!--<result property="title" column="title" />-->
+        <!--<result property="content" column="content" />-->
+
+        <!--<association property="user" javaType="User">-->
+            <!--<id property="id" column="id" />-->
+            <!--<result property="userName" column="userName" />-->
+            <!--<result property="userAddress" column="userAddress" />-->
+        <!--</association>-->
+    <!--</resultMap>-->
+    <resultMap id="resultUserArticle" type="Article">
+        <id property="id" column="aid" />
+        <result property="title" column="title" />
+        <result property="content" column="content" />
+        <association property="user" javaType="_User" resultMap="resultListUser" />
+    </resultMap>
+    <select id="getUserArtices" parameterType="int" resultMap="resultUserArticle">
+        select _user.id, _user.userName, _user.userAddress, _user.phoneNumber, article.id aid, article.title,
+        article.content from _user, article
+        where _user.id = article.userid and _user.id = #{id}
+    </select>
+</mapper>

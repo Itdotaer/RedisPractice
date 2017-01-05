@@ -1,44 +1,73 @@
 package com.itdoater.access.pojo;
 
+import java.util.Date;
+
 /**
- * Created by jt_hu on 2016/12/30.
+ * Created by jt_hu on 2017/1/5.
  */
 public class User {
 
-    private int id;
-    private String userName;
-    private String userAge;
-    private String userAddress;
-    private PhoneNumber phoneNumber;
+    private String name;
+    private String loginName;
+    private String password;
+    private String email;
+    private String avator;
+    private Date createdAt;
+    private Date updatedAt;
 
-    public int getId() {
-        return id;
+    public String getName() {
+        return name;
     }
-    public void setId(int id) {
-        this.id = id;
+
+    public void setName(String name) {
+        this.name = name;
     }
-    public String getUserName() {
-        return userName;
+
+    public String getLoginName() {
+        return loginName;
     }
-    public void setUserName(String userName) {
-        this.userName = userName;
+
+    public void setLoginName(String loginName) {
+        this.loginName = loginName;
     }
-    public String getUserAge() {
-        return userAge;
+
+    public String getPassword() {
+        return password;
     }
-    public void setUserAge(String userAge) {
-        this.userAge = userAge;
+
+    public void setPassword(String password) {
+        this.password = password;
     }
-    public String getUserAddress() {
-        return userAddress;
+
+    public String getEmail() {
+        return email;
     }
-    public void setUserAddress(String userAddress) {
-        this.userAddress = userAddress;
+
+    public void setEmail(String email) {
+        this.email = email;
     }
-    public PhoneNumber getPhoneNumber() {
-        return phoneNumber;
+
+    public String getAvator() {
+        return avator;
     }
-    public void setPhoneNumber(PhoneNumber phoneNumber) {
-        this.phoneNumber = phoneNumber;
+
+    public void setAvator(String avator) {
+        this.avator = avator;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

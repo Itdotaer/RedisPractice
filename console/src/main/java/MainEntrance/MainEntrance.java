@@ -1,10 +1,10 @@
 package MainEntrance;
 
 import com.itdoater.access.dataaccess.SysConfigAccess;
-import com.itdoater.access.dataaccess.UserAccess;
+import com.itdoater.access.dataaccess._UserAccess;
 import com.itdoater.access.pojo.Article;
 import com.itdoater.access.pojo.SysConfig;
-import com.itdoater.access.pojo.User;
+import com.itdoater.access.pojo._User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,24 +27,24 @@ class MainEntrance{
 
         //User
         System.out.println("-----User-----");
-        UserAccess userAccess = new UserAccess();
+        _UserAccess userAccess = new _UserAccess();
 
         //AddUser
-        User addUser = new User();
+        _User addUser = new _User();
         addUser.setUserName("harry");
         addUser.setUserAge("26");
         addUser.setUserAddress("SOHO");
 
         userAccess.addUser(addUser);
 
-        User user = userAccess.getUserById(1);
+        _User user = userAccess.getUserById(1);
 
         System.out.println(String.format("%s\t$%s\t%s\t%s\t$s", user.getId(), user.getUserName(),
                 user.getUserAge(), user.getUserAddress(), user.getPhoneNumber().toString()));
 
-        List<User> users = userAccess.getUsers("%");
+        List<_User> users = userAccess.getUsers("%");
 
-        for(User user1 : users){
+        for(_User user1 : users){
             System.out.println(String.format("%s\t$%s\t%s\t%s\t%s", user1.getId(), user1.getUserName(),
                     user1.getUserAge(), user1.getUserAddress(), user1.getPhoneNumber().toString()));
         }
