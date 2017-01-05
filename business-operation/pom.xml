@@ -6,7 +6,7 @@
 
     <parent>
         <artifactId>higher-practice</artifactId>
-        <groupId>com.itdoater.higher-practice</groupId>
+        <groupId>com.itdotaer.higher-practice</groupId>
         <version>1.0</version>
     </parent>
 
@@ -15,7 +15,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.itdoater.higher-practice</groupId>
+            <groupId>com.itdotaer.higher-practice</groupId>
             <artifactId>data-access</artifactId>
             <version>${project.parent.version}</version>
         </dependency>

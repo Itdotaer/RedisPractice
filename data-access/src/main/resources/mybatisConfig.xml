@@ -12,12 +12,12 @@
         <setting name="defaultExecutorType" value="REUSE" />
     </settings>
     <typeAliases>
-        <typeAlias alias="SysConfig" type="com.itdoater.access.pojo.SysConfig"/>
-        <typeAlias alias="_User" type="com.itdoater.access.pojo._User"/>
-        <typeAlias alias="Article" type="com.itdoater.access.pojo.Article" />
+        <typeAlias alias="SysConfig" type="com.itdotaer.access.pojo.SysConfig"/>
+        <typeAlias alias="_User" type="com.itdotaer.access.pojo._User"/>
+        <typeAlias alias="Article" type="com.itdotaer.access.pojo.Article" />
     </typeAliases>
     <typeHandlers>
-        <typeHandler handler="com.itdoater.access.handler.PhoneTypeHanlder" />
+        <typeHandler handler="com.itdotaer.access.handler.PhoneTypeHanlder" />
     </typeHandlers>
     <environments default="development">
         <environment id="itdotaer">

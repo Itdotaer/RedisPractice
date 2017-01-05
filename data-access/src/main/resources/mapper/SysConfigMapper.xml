@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.itdoater.access.mapper.SysConfigMapper">
+<mapper namespace="com.itdotaer.access.mapper.SysConfigMapper">
   <resultMap id="sysConfigList" type="SysConfig">
     <id column="variable" jdbcType="VARCHAR" property="variable" />
     <result column="value" jdbcType="VARCHAR" property="value" />

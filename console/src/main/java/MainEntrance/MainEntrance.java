@@ -1,10 +1,10 @@
 package MainEntrance;
 
-import com.itdoater.access.dataaccess.SysConfigAccess;
-import com.itdoater.access.dataaccess._UserAccess;
-import com.itdoater.access.pojo.Article;
-import com.itdoater.access.pojo.SysConfig;
-import com.itdoater.access.pojo._User;
+import com.itdotaer.access.dataaccess.SysConfigAccess;
+import com.itdotaer.access.dataaccess._UserAccess;
+import com.itdotaer.access.pojo.Article;
+import com.itdotaer.access.pojo.SysConfig;
+import com.itdotaer.access.pojo._User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
