@@ -26,25 +26,25 @@ public interface UserMapper {
      * 新增User
      * @param user
      */
-    void addUser(User user);
+    int addUser(User user);
 
     /**
      * 修改User
      * @param user
      */
-    void updateUser(User user);
+    int updateUser(User user);
 
     /**
      * 删除User
      * @param id
      */
-    void deleteUserById(int id);
+    int deleteUserById(int id);
 
     /**
      * 根据UserName删掉符合条件的Users
      * @param userName
      */
-    void deleteUserByUserName(String userName);
+    int deleteUserByUserName(String userName);
 
     /**
      * 关联查询

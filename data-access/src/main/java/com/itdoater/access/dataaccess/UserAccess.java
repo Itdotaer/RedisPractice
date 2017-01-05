@@ -15,7 +15,7 @@ public class UserAccess implements UserMapper {
     private UserMapper mapper;
 
     public UserAccess(){
-        session = AccessFactory.getSession();
+        session = AccessFactory.getItdotaerSession();
         try {
             mapper =  session.getMapper(UserMapper.class);
         } catch (Exception e){
@@ -52,9 +52,8 @@ public class UserAccess implements UserMapper {
      * @param user
      */
     @Override
-    public void addUser(User user) {
-        mapper.addUser(user);
-        session.commit();
+    public int addUser(User user) {
+        return mapper.addUser(user);
     }
 
     /**
@@ -63,9 +62,8 @@ public class UserAccess implements UserMapper {
      * @param user
      */
     @Override
-    public void updateUser(User user) {
-        mapper.updateUser(user);
-        session.commit();
+    public int updateUser(User user) {
+        return mapper.updateUser(user);
     }
 
     /**
@@ -74,9 +72,8 @@ public class UserAccess implements UserMapper {
      * @param id
      */
     @Override
-    public void deleteUserById(int id) {
-        mapper.deleteUserById(id);
-        session.commit();
+    public int deleteUserById(int id) {
+        return mapper.deleteUserById(id);
     }
 
     /**
@@ -85,9 +82,8 @@ public class UserAccess implements UserMapper {
      * @param userName
      */
     @Override
-    public void deleteUserByUserName(String userName) {
-        mapper.deleteUserByUserName(userName);
-        session.commit();
+    public int deleteUserByUserName(String userName) {
+        return mapper.deleteUserByUserName(userName);
     }
 
     /**

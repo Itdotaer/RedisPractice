@@ -14,7 +14,7 @@ public class SysConfigAccess implements SysConfigMapper {
     private SysConfigMapper mapper;
 
     public SysConfigAccess(){
-        session = AccessFactory.getSession();
+        session = AccessFactory.getSysSession();
         try {
             mapper =  session.getMapper(SysConfigMapper.class);
         } catch (Exception e){
