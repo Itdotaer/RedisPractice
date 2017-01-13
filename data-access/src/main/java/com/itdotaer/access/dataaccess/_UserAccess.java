@@ -104,6 +104,13 @@ public class _UserAccess implements _UserMapper {
     }
 
     /**
+     * 提交更改
+     */
+    public void commit(){
+        session.commit();
+    }
+
+    /**
      * 关闭
      */
     public void close(){

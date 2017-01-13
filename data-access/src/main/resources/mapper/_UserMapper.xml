@@ -11,7 +11,7 @@
     <select id="getUserById" parameterType="int" resultType="_User">
         select * from _user where id = #{id}
     </select>
-    <select id="getUsers" parameterType="String" resultMap="resultListUser">
+    <select id="getUsers" parameterType="String" resultType="_User">
         select * from _user where userName like #{userName}
     </select>
     <insert id="addUser" parameterType="_User" useGeneratedKeys="true" keyProperty="id">

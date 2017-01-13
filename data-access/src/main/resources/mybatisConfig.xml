@@ -17,9 +17,10 @@
         <typeAlias alias="Article" type="com.itdotaer.access.pojo.Article" />
         <typeAlias alias="UserArticles" type="com.itdotaer.access.pojo.UserArticles" />
         <typeAlias alias="OneArticle" type="com.itdotaer.access.pojo.OneArticle" />
+        <typeAlias alias="_UserPic" type="com.itdotaer.access.pojo._UserPic" />
     </typeAliases>
     <typeHandlers>
-        <typeHandler handler="com.itdotaer.access.handler.PhoneTypeHanlder" />
+        <typeHandler handler="com.itdotaer.access.handler.PhoneTypeHanlder" javaType="com.itdotaer.access.pojo.PhoneNumber"/>
     </typeHandlers>
     <environments default="development">
         <environment id="itdotaer">
@@ -44,5 +45,6 @@
     <mappers>
         <mapper resource="mapper/SysConfigMapper.xml" />
         <mapper resource="mapper/_UserMapper.xml" />
+        <mapper resource="mapper/_UserPicMapper.xml" />
     </mappers>
 </configuration>

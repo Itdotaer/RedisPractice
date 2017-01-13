@@ -2,10 +2,12 @@ package MainEntrance;
 
 import com.itdotaer.access.dataaccess.SysConfigAccess;
 import com.itdotaer.access.dataaccess._UserAccess;
+import com.itdotaer.access.dataaccess._UserPicAccess;
 import com.itdotaer.access.pojo.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.*;
 import java.util.List;
 
 class MainEntrance{
@@ -34,6 +36,7 @@ class MainEntrance{
         addUser.setUserAddress("SOHO");
 
         userAccess.addUser(addUser);
+        userAccess.commit();
 
         _User user = userAccess.getUserById(1);
 
@@ -48,12 +51,14 @@ class MainEntrance{
         }
 
         //UpdateUser
-        user.setUserName("胡江涛");
+        user.setUserName("胡江涛1");
         userAccess.updateUser(user);
+        userAccess.commit();
 
         //DeleteUser
         userAccess.deleteUserById(4);
         userAccess.deleteUserByUserName("harry");
+        userAccess.commit();
 
         //一对一查询
         List<Article> articles = userAccess.getUserArticles(1);
@@ -79,5 +84,32 @@ class MainEntrance{
 
         Logger logger = LoggerFactory.getLogger(MainEntrance.class);
         logger.info("slf4j: Hello World");
+
+        _UserPicAccess userPicAccess = new _UserPicAccess();
+
+        //Inser User Pic
+        byte[] pic = null;
+        String picName = "";
+        try{
+            File file = new File("E:\\UserPic.jpg");
+            picName = file.getName();
+            InputStream is = new FileInputStream(file);
+            pic = new byte[is.available()];
+            is.read(pic);
+            is.close();
+        }catch (FileNotFoundException e){
+            logger.error("FileNotFundException", e);
+        }catch (IOException e){
+            logger.error("IOException", e);
+        }
+
+        _UserPic userPic = new _UserPic();
+        userPic.setPicName(picName);
+        userPic.setPic(pic);
+
+        userPicAccess.insertUserPic(userPic);
+        userPicAccess.commit();
+
+        userPicAccess.close();
     }
 }
