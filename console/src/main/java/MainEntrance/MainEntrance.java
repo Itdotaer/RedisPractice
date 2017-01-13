@@ -2,9 +2,7 @@ package MainEntrance;
 
 import com.itdotaer.access.dataaccess.SysConfigAccess;
 import com.itdotaer.access.dataaccess._UserAccess;
-import com.itdotaer.access.pojo.Article;
-import com.itdotaer.access.pojo.SysConfig;
-import com.itdotaer.access.pojo._User;
+import com.itdotaer.access.pojo.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -57,11 +55,24 @@ class MainEntrance{
         userAccess.deleteUserById(4);
         userAccess.deleteUserByUserName("harry");
 
-        List<Article> articles = userAccess.getUserArtices(1);
+        //一对一查询
+        List<Article> articles = userAccess.getUserArticles(1);
         for(Article article:articles){
             System.out.println(article.getTitle()+":"+article.getContent()+
                     ":作者是:"+article.getUser().getUserName()+":地址:"+
                     article.getUser().getUserAddress()+":电话:"+article.getUser().getPhoneNumber().toString());
+        }
+
+        //一对多查询
+        UserArticles userArticles = userAccess.getUserArticlesBySelect(1);
+
+        if(userArticles != null){
+            _User _user = userArticles.getUser();
+            for(OneArticle article:userArticles.getArticles()){
+                System.out.println(article.getTitle()+":"+article.getContent()+
+                        ":作者是:"+_user.getUserName()+":地址:"+
+                        _user.getUserAddress()+":电话:"+_user.getPhoneNumber().toString());
+            }
         }
 
         userAccess.close();

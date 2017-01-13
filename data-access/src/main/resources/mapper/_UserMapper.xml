@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.itdotaer.access.mapper._UserMapper">
-    <select id="getUserById" parameterType="int" resultType="_User">
-        select * from _user where id = #{id}
-    </select>
     <resultMap id="resultListUser" type="_User">
         <id column="id" property="id" />
         <result column="userName" property="userName" />
@@ -11,6 +8,9 @@
         <result column="userAddress" property="userAddress" />
         <result column="phoneNumber" property="phoneNumber" />
     </resultMap>
+    <select id="getUserById" parameterType="int" resultType="_User">
+        select * from _user where id = #{id}
+    </select>
     <select id="getUsers" parameterType="String" resultMap="resultListUser">
         select * from _user where userName like #{userName}
     </select>
@@ -27,6 +27,8 @@
     <delete id="deleteUserByUserName" parameterType="String">
         delete from _user where userName = #{userName}
     </delete>
+
+    <!--  Article-User 一对一 -->
     <!--<resultMap id="resultUserArticle" type="Article">-->
         <!--<id property="id" column="aid" />-->
         <!--<result property="title" column="title" />-->
@@ -44,9 +46,30 @@
         <result property="content" column="content" />
         <association property="user" javaType="_User" resultMap="resultListUser" />
     </resultMap>
-    <select id="getUserArtices" parameterType="int" resultMap="resultUserArticle">
+    <select id="getUserArticles" parameterType="int" resultMap="resultUserArticle">
         select _user.id, _user.userName, _user.userAddress, _user.phoneNumber, article.id aid, article.title,
         article.content from _user, article
         where _user.id = article.userid and _user.id = #{id}
     </select>
+
+    <!-- User-Articles 一对多 -->
+    <resultMap id="resultUserArticleBySelect" type="UserArticles">
+        <association property="user" javaType="_User" resultMap="resultListUser" />
+        <collection property="articles" column="id" select="getArticlesByUserId" />
+    </resultMap>
+    <resultMap id="resultOneArticle" type="OneArticle">
+        <result property="title" column="title" />
+        <result property="content" column="content" />
+    </resultMap>
+    <select id="getUserArticlesBySelect" parameterType="int" resultMap="resultUserArticleBySelect">
+        select _user.id, _user.userName, _user.userAddress, _user.phoneNumber
+        from _user
+        where _user.id = #{id}
+    </select>
+    <select id="getArticlesByUserId" parameterType="int" resultMap="resultOneArticle">
+        select article.title,article.content
+        from article
+        where article.userid = #{id}
+    </select>
+
 </mapper>

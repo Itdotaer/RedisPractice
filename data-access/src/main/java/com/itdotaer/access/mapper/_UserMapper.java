@@ -1,6 +1,7 @@
 package com.itdotaer.access.mapper;
 
 import com.itdotaer.access.pojo.Article;
+import com.itdotaer.access.pojo.UserArticles;
 import com.itdotaer.access.pojo._User;
 import java.util.List;
 
@@ -51,5 +52,7 @@ public interface _UserMapper {
      * @param id
      * @return
      */
-    List<Article> getUserArtices(int id);
+    List<Article> getUserArticles(int id);
+
+    UserArticles getUserArticlesBySelect(int id);
 }

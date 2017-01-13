@@ -2,6 +2,7 @@ package com.itdotaer.access.dataaccess;
 
 import com.itdotaer.access.mapper._UserMapper;
 import com.itdotaer.access.pojo.Article;
+import com.itdotaer.access.pojo.UserArticles;
 import com.itdotaer.access.pojo._User;
 import org.apache.ibatis.session.SqlSession;
 
@@ -93,8 +94,13 @@ public class _UserAccess implements _UserMapper {
      * @return
      */
     @Override
-    public List<Article> getUserArtices(int id) {
-        return mapper.getUserArtices(id);
+    public List<Article> getUserArticles(int id) {
+        return mapper.getUserArticles(id);
+    }
+
+    @Override
+    public UserArticles getUserArticlesBySelect(int id) {
+        return mapper.getUserArticlesBySelect(id);
     }
 
     /**
