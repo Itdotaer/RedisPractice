@@ -3,6 +3,7 @@ package com.itdotaer.access.dataaccess;
 import com.itdotaer.access.mapper._UserPicMapper;
 import com.itdotaer.access.pojo._UserPic;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
 
 import java.util.Date;
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 /**
  * Created by jt_hu on 2017/1/13.
  */
+@Repository
 public class _UserPicAccess implements _UserPicMapper {
 
     private SqlSession session;

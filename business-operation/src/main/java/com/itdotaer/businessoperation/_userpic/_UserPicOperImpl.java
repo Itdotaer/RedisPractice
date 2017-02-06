@@ -3,19 +3,23 @@ package com.itdotaer.businessoperation._userpic;
 import com.itdotaer.access.dataaccess._UserPicAccess;
 import com.itdotaer.access.pojo._UserPic;
 import com.itdotaer.businessoperation.dal.DalAccessFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by jt_hu on 2017/1/13.
  */
+@Service
 public class _UserPicOperImpl implements _UserPicOper {
 
+    @Autowired
     private _UserPicAccess userPicAccess;
 
-    public _UserPicOperImpl(){
-        userPicAccess = DalAccessFactory.getUserPicAccess();
-    }
+//    public _UserPicOperImpl(){
+//        userPicAccess = DalAccessFactory.getUserPicAccess();
+//    }
 
     /**
      * 获取所有用户图片

@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
  * Created by jt_hu on 2017/1/4.
  */
 @SpringBootApplication
-@ComponentScan
+@ComponentScan("com.itdotaer")
 public class Application {
 
     public static void main(String[] args) throws Exception {

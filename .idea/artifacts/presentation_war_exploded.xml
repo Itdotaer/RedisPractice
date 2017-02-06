@@ -34,8 +34,10 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.3.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.3.5.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-actuator:1.4.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-actuator:1.4.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-thymeleaf:1.4.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf-spring4:2.1.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf:2.1.5.RELEASE" />

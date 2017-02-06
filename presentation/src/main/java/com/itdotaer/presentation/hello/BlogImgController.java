@@ -2,10 +2,10 @@ package com.itdotaer.presentation.hello;
 
 import com.itdotaer.access.pojo._UserPic;
 import com.itdotaer.businessoperation._userpic._UserPicOper;
-import com.itdotaer.businessoperation._userpic._UserPicOperImpl;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Created by jt_hu on 2017/1/13.
@@ -25,6 +27,8 @@ import java.io.*;
 public class BlogImgController {
 
     Logger logger = LoggerFactory.getLogger(BlogImgController.class);
+    @Autowired
+    _UserPicOper userPicOper;
 
     /**
      * Blob图片生成器
@@ -34,7 +38,6 @@ public class BlogImgController {
      */
     @RequestMapping(value = "/image/{fileId}")
     public void image(@PathVariable int fileId, Model model, HttpServletResponse response) throws IOException {
-        _UserPicOper userPicOper = new _UserPicOperImpl();
         _UserPic userPic = userPicOper.getPic(fileId);
         InputStream inputStream = new ByteArrayInputStream(userPic.getPic());
 
@@ -45,7 +48,6 @@ public class BlogImgController {
     @ResponseBody
     @RequestMapping(value = "/imageDemo/{fileId}")
     public ResponseEntity<InputStreamResource> imageDemo(@PathVariable int fileId) {
-        _UserPicOper userPicOper = new _UserPicOperImpl();
         _UserPic userPic = userPicOper.getPic(fileId);
 
         return ResponseEntity.ok()

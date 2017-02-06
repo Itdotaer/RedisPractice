@@ -3,9 +3,10 @@ package com.itdotaer.presentation.hello;
 import com.itdotaer.access.pojo._User;
 import com.itdotaer.access.pojo._UserPic;
 import com.itdotaer.businessoperation._user._UserOper;
-import com.itdotaer.businessoperation._user._UserOperImpl;
 import com.itdotaer.businessoperation._userpic._UserPicOper;
-import com.itdotaer.businessoperation._userpic._UserPicOperImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,8 +24,11 @@ import java.util.List;
 @Controller
 public class _UserController {
 
-    private _UserOper userOper = new _UserOperImpl();
-    private _UserPicOper userPicOper = new _UserPicOperImpl();
+    Logger logger = LoggerFactory.getLogger(_UserController.class);
+    @Autowired
+    private _UserOper userOper;
+    @Autowired
+    private _UserPicOper userPicOper;
 
 
     @RequestMapping("/_users")

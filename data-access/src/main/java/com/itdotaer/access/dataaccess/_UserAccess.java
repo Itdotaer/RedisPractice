@@ -5,12 +5,14 @@ import com.itdotaer.access.pojo.Article;
 import com.itdotaer.access.pojo.UserArticles;
 import com.itdotaer.access.pojo._User;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * Created by jt_hu on 2016/12/30.
  */
+@Repository
 public class _UserAccess implements _UserMapper {
     private SqlSession session;
     private _UserMapper mapper;
